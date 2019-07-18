@@ -7,4 +7,11 @@ RSpec.describe "home page", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "about page" do
+    it "renders the about page" do
+      get about_path
+      expect(response).to have_http_status(200)
+    end
+  end
 end
