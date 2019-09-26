@@ -1,3 +1,11 @@
 <% @posts.each do | post | %>
-<p> <%= link_to post.title, post_path(post) %> <%= link_to "Edit", edit_post_path(post), class:"button is-danger is-small"%> </p>
+  <p>
+    <%= link_to post.title, post_path(post) %>
+    <%= link_to "Edit", edit_post_path(post), class: "button is-link is-outlined is-rounded is-small"%>
+    <%= link_to 'Post Go Bye Bye', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' },
+              class: "button is-danger is-outlined is-rounded is-small"
+    %>
+  </p>
 <% end %>
