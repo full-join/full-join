@@ -14,3 +14,9 @@
  *= require_self
  */
 @import "bulma";
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+}

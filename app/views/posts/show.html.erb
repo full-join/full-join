@@ -1,0 +1,18 @@
+
+<p class="title is-1">
+  <%= @post.title %>
+</p>
+
+<div class="is-content is-medium post-content">
+  <span class="first-letter"><%= @post.text.first %></span>
+  <%= simple_format(@post.text[1..-1], class: 'post-text') %>
+</div>
+
+<div class="post-buttons">
+  <%= link_to "Home", root_path, class: "button is-primary is-outlined is-rounded is-small" %>
+  <%= link_to "Edit", edit_post_path(@post), class: "button is-link is-outlined is-rounded is-small" %>
+  <%= link_to 'Delete', post_path(@post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: "button is-danger is-outlined is-rounded is-small" %>
+</div>

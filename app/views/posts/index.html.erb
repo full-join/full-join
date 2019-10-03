@@ -1,0 +1,25 @@
+<p class="title is-3">
+  Welcome to Full Join
+</p>
+<p class="subtitle">
+Here's what we've been up to...
+</p>
+
+<% @posts.each_with_index do | post, index | %>
+  <article class="message <%=generate_class(index)%>">
+    <div class="message-header">
+      <p><%= post.title %></p>
+    </div>
+    <div class="message-body">
+      <%= simple_format(post.text[0..100]) %>
+    </div>
+    <div class="post-buttons">
+        <%= link_to "View", post_path(post), class: "button is-primary is-outlined is-rounded is-small" %>
+        <%= link_to "Edit", edit_post_path(post), class: "button is-link is-outlined is-rounded is-small"%>
+        <%= link_to 'Post Go Bye Bye', post_path(post),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' },
+                  class: "button is-danger is-outlined is-rounded is-small"%>
+    </div>
+  </article>
+<% end %>
