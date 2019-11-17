@@ -1,0 +1,56 @@
+def question_logic
+  introvert= false
+  valid_answer= false
+  x=0
+  while (not valid_answer)
+    answer=gets.chomp.downcase
+    if (answer == 'yes' or answer == 'no')
+      valid_answer = true
+    else
+      puts ''
+      puts 'please answer "yes" or "no"'
+      puts ''
+    end
+    if (answer == 'no')
+      introvert = true
+    else
+      introvert == false
+      end
+      if introvert==true
+        x=1
+        else x=0
+      end
+    end
+  x
+end
+
+count = 0
+
+puts 'Hello, the point of this program will be'
+puts 'to identify if you are someone we can classify'
+puts 'as an introvert. please answer all questions in '
+puts '"yes" or "no" format'
+
+#question  1
+puts 'Do you like being in the standing area of a concert?'
+question_logic
+if question_logic == 1
+  count = 1
+else
+  count = 0
+end
+#question  2
+puts 'Do you like public places'
+question_logic
+if question_logic == 1
+  count = 1
+else
+  count = 0
+end
+
+if count == 2
+  introvert_conclusion= true
+  else false
+end
+
+puts 'Introvert? ' + introvert_conclusion.to_s
