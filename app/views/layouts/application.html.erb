@@ -12,6 +12,9 @@
   <body>
     <%= render 'layouts/navbar' %>
     <div class="container">
+      <div class="notification">
+        <%= h flash[:danger]%>
+      </div>
       <%= yield %>
       <%= debug(params) if Rails.env.development? %>
     </div>

@@ -11,6 +11,10 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+  def destroy
+    logout_current_user
+    redirect_to root_url
+  end
   private
   def session_params
       params.require(:session).permit(:email, :password)
