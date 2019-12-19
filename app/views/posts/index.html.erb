@@ -8,7 +8,11 @@ Here's what we've been up to...
 <% @posts.each_with_index do | post, index | %>
   <article class="message <%=generate_class(index)%>">
     <div class="message-header">
-      <p><%= post.title %></p>
+      <p>
+        <span class="icon has-text-danger">
+        <i class="fas fa-heart"></i>
+      </span>
+        <%= post.title %></p>
     </div>
     <div class="message-body">
       <%= simple_format(post.text[0..100]) %>
