@@ -10,7 +10,7 @@ Here's what we've been up to...
     <div class="message-header">
       <p>
         <span class="icon has-text-danger">
-        <i class="fas fa-heart"></i>
+        <i onclick=<%="toggleLike('like-#{post.id}')"%> class="far fa-heart" id=<%= "like-#{post.id}" %>></i>
       </span>
         <%= post.title %></p>
     </div>
@@ -27,3 +27,11 @@ Here's what we've been up to...
     </div>
   </article>
 <% end %>
+<script type="text/javascript">
+  
+function toggleLike(id){
+  $("i#"+id).toggleClass("far");
+  $("i#"+id).toggleClass("fas");
+}
+
+</script>
