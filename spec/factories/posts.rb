@@ -9,5 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-class Post < ApplicationRecord
+FactoryBot.define do
+  factory :post do
+    title {Faker::Book.title}
+    text {Faker::TvShows::HowIMetYourMother.quote}
+  end
 end

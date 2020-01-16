@@ -11,6 +11,11 @@
 #  password_digest :string
 #
 
-class User < ApplicationRecord
-  has_secure_password
+FactoryBot.define do
+  factory :user do
+    email {Faker::Internet.email}
+    name {Faker::Name.name}
+    hackeralias {Faker::Internet.username}
+    password {"123456"}
+  end
 end
