@@ -1,4 +1,4 @@
 <div class="title is-3">New Post</div>
-<%= form_with scope: :post, url:posts_path, local: true do |form| %>
+<%= form_with scope: :blog, url:posts_path, local: true do |form| %>
   <%= render "form", form: form %>
 <% end %>

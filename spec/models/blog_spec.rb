@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: blogs
 #
 #  id         :bigint           not null, primary key
 #  title      :string
@@ -9,5 +9,8 @@
 #  updated_at :datetime         not null
 #
 
-class Post < ApplicationRecord
+require 'rails_helper'
+
+RSpec.describe Blog, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

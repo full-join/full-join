@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: blogs
 #
 #  id         :bigint           not null, primary key
 #  title      :string
@@ -10,7 +10,7 @@
 #
 
 FactoryBot.define do
-  factory :post do
+  factory :blog do
     title {Faker::Book.title}
     text {Faker::TvShows::HowIMetYourMother.quote}
   end
