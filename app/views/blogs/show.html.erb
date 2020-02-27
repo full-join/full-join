@@ -3,15 +3,15 @@
   <%= @blog.title %>
 </p>
 
-<div class="is-content is-medium post-content">
+<div class="is-content is-medium blog-content">
   <span class="first-letter"><%= @blog.text.first %></span>
-  <%= simple_format(@blog.text[1..-1], class: 'post-text') %>
+  <%= simple_format(@blog.text[1..-1], class: 'blog-text') %>
 </div>
 
-<div class="post-buttons">
+<div class="blog-buttons">
   <%= link_to "Home", root_path, class: "button is-primary is-outlined is-rounded is-small" %>
-  <%= link_to "Edit", edit_post_path(@blog), class: "button is-link is-outlined is-rounded is-small" %>
-  <%= link_to 'Delete', post_path(@blog),
+  <%= link_to "Edit", edit_blog_path(@blog), class: "button is-link is-outlined is-rounded is-small" %>
+  <%= link_to 'Delete', blog_path(@blog),
                 method: :delete,
                 data: { confirm: 'Are you sure?' },
                 class: "button is-danger is-outlined is-rounded is-small" %>
