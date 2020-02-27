@@ -1,0 +1,37 @@
+<p class="title is-3">
+  Welcome to Full Join
+</p>
+<p class="subtitle">
+Here's what we've been up to...
+</p>
+
+<% @blogs.each_with_index do | blog, index | %>
+  <article class="message <%=generate_class(index)%>">
+    <div class="message-header">
+      <p>
+        <span class="icon has-text-danger">
+        <i onclick=<%="toggleLike('like-#{blog.id}')"%> class="far fa-heart" id=<%= "like-#{blog.id}" %>></i>
+      </span>
+        <%= blog.title %></p>
+    </div>
+    <div class="message-body">
+      <%= simple_format(blog.text[0..100]) %>
+    </div>
+    <div class="blog-buttons">
+        <%= link_to "View", blog_path(blog), class: "button is-primary is-outlined is-rounded is-small" %>
+        <%= link_to "Edit", edit_blog_path(blog), class: "button is-link is-outlined is-rounded is-small"%>
+        <%= link_to 'Blog Go Bye Bye', blog_path(blog),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' },
+                  class: "button is-danger is-outlined is-rounded is-small"%>
+    </div>
+  </article>
+<% end %>
+<script type="text/javascript">
+  
+function toggleLike(id){
+  $("i#"+id).toggleClass("far");
+  $("i#"+id).toggleClass("fas");
+}
+
+</script>

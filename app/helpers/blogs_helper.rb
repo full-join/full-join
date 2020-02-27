@@ -1,4 +1,4 @@
-module PostsHelper
+module BlogsHelper
   def generate_class(index)
     case index % 6
     when 0
